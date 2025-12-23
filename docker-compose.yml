@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api_chatbot:
+    build: .
+    container_name: api_chatbot
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    # Si quieres desarrollar con hot-reload, descomenta las siguientes líneas:
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
+    # command: npm run dev
